@@ -28,4 +28,10 @@
 //    }
     
 }
+-(void)finish{
+    
+}
+-(void)cancel{
+    
+}
 @end

@@ -45,8 +45,6 @@
     void(^finishBlock)(id result, NSUInteger tag) = [self blockForSelector:@selector(finishDone:)];
     void (^failedBlock)(id error) = [self blockForSelector:@selector(failedDone:)];
     if (finishBlock) {
-       // [[Facade sharedInstance] startProcessor1:self doneBlock:finishBlock failedDone:failedBlock];
-       // [[NetEngineFactory sharedInstance] startRequest:self doneBlock:finishBlock failedDone:failedBlock];
        [[ASINetEngine createNetFactory] startRequest:self doneBlock:finishBlock failedDone:failedBlock];
         
     }
