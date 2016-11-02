@@ -18,14 +18,14 @@
         [self.delegate handleNextProcessor:self];
     }
 }
-- (instancetype)sendRequestWithUrl:(NSString *)url withParam:(NSDictionary *)param{
-    self.url = url;
-    self.param = param;
-    return self;
-}
-- (instancetype)sendRequestWithUrl:(NSString *)url withParam:(NSDictionary *)param finishDone:(void(^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock{
-    return [[[self sendRequestWithUrl:url withParam:param] finishDone:doneBlock] failedDone:failedBlock];
-}
+//- (instancetype)sendRequestWithUrl:(NSString *)url withParam:(NSDictionary *)param{
+//    self.url = url;
+//    self.param = param;
+//    return self;
+//}
+//- (instancetype)sendRequestWithUrl:(NSString *)url withParam:(NSDictionary *)param finishDone:(void(^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock{
+//    return [[[self sendRequestWithUrl:url withParam:param] finishDone:doneBlock] failedDone:failedBlock];
+//}
 //- (instancetype)startTask:(id(^)(void))startBlock finishDone:(void(^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock{
 //    return  [[[self startTask:startBlock] finishDone:doneBlock] failedDone:failedBlock];
 //}
@@ -41,13 +41,24 @@
 //        [[Facade sharedInstance] startProcessor:startBlock doneBlock:finishBlock failedDone:failedBlock];
 //    }
 //}
-- (void)startCurrentProcessor{
-    void(^finishBlock)(id result, NSUInteger tag) = [self blockForSelector:@selector(finishDone:)];
-    void (^failedBlock)(id error) = [self blockForSelector:@selector(failedDone:)];
-    if (finishBlock) {
-       [[ASINetEngine createNetFactory] startRequest:self doneBlock:finishBlock failedDone:failedBlock];
-        
+
+- (void)finishedTask:(id)result {
+    self.result = result;
+    if ([self.delegate respondsToSelector:@selector(handleNextProcessor:)]) {
+        [self.delegate handleNextProcessor:self];
     }
-    
+}
+
+- (void)faildTask:(NSError *)error {
+    self.error = error;
+}
+
+//- (instancetype)processorWithStartTask:(id(^)(void))startBlock finishDone:(void(^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock {
+//    return [[[self startTask:startBlock] finishDone:doneBlock] failedDone:failedBlock];
+//}
+//
+- (void)startCurrentProcessor{
+    id(^startBlock)(Processor *) = [self blockForSelector:NSSelectorFromString(@"startTask:")];
+    startBlock(self);
 }
 @end

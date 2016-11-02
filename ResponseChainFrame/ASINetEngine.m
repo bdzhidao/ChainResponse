@@ -14,12 +14,12 @@
     //发起请求 [self sendrequest];
     if (doneBlock) {
         NSLog(@"%@ asihttp request nettask请求结束",NSStringFromClass([processor class]));
-        NSLog(@"param:%@",processor.param);
-        NSLog(@"url:%@",processor.url);
+//        NSLog(@"param:%@",processor.param);
+//        NSLog(@"url:%@",processor.url);
         doneBlock(@"finish",1);
-        if ([processor.delegate respondsToSelector:@selector(handleNextProcessor:)]) {
-            [processor.delegate handleNextProcessor:processor];
-        }
+//        if ([processor.delegate respondsToSelector:@selector(handleNextProcessor:)]) {
+//            [processor.delegate handleNextProcessor:processor];
+//        }
     }
 //    if (failedBlock) {
 //        if ([processor.delegate respondsToSelector:@selector(cancelProcessor:)]) {

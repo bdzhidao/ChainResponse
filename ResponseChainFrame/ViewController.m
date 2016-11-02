@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ChainEngine.h"
 #import "Processor.h"
+#import "ASINetEngine.h"
 @interface ViewController ()
 @property (nonatomic,strong) Processor *processor1;
 @property (nonatomic,strong) Processor *processor2;
@@ -23,7 +24,7 @@
     NSMutableArray *processorArray = [NSMutableArray new];
     [processorArray addObject:self.processor1];
     [processorArray addObject:self.processor2];
-    [processorArray addObject:self.processor3];
+//    [processorArray addObject:self.processor3];
     [processorArray addObject:self.processFinish];
 
     ChainEngine *engine = [ChainEngine new];
@@ -35,65 +36,105 @@
     }];
 }
 
-- (Processor *)processor1{
-    if (!_processor1) {
-        _processor1 = [[Processor processorBuilder]
-                       sendRequestWithUrl:@"url1"
-                       withParam:@{@"fitst1":@"value1"}
-                       finishDone:^(id result, NSUInteger tag) {
-                           NSLog(@"processor1 end,handle processor1 operation\n\n");
-                           _processor1.param = @{@"k1":@"v1"};
-                       } failedDone:^(id error) {
-                           NSLog(@"processor1 error\n\n");
-                       }];
-
-    }
-    return _processor1;
+- (Processor *)processor1 {
+    return [[Processor processorBuilder] startTask:^id(Processor *processor) {
+        [[ASINetEngine createNetFactory] startRequest:processor doneBlock:^(id result, NSUInteger tag) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [processor finishedTask:result];
+            });
+        } failedDone:^(id error) {
+            [processor faildTask:error];
+        }];
+        return nil;
+    }];
 }
 
-- (Processor *)processor2{
-    if (!_processor2) {
-        _processor2 = [[Processor processorBuilder]
-                       sendRequestWithUrl:@"url2"
-                       withParam:nil
-                       finishDone:^(id result, NSUInteger tag) {
-                           _processor2.param = @{@"k2":@"v2"};
-                           NSLog(@"processor2 end,handle processor2 operation\n\n");
-                       }
-                       failedDone:^(id error) {
-                           NSLog(@"processor2 error\n\n");
-                       }];
-    }
-    return _processor2;
+- (Processor *)processor2 {
+    return [[Processor processorBuilder] startTask:^id(Processor *prcessor) {
+        [[ASINetEngine createNetFactory] startRequest:prcessor doneBlock:^(id result, NSUInteger tag) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [prcessor finishedTask:result];
+            });
+        } failedDone:^(id error) {
+            [prcessor faildTask:error];
+        }];
+        return nil;
+    }];
 }
-- (Processor *)processor3{
-    if (!_processor3) {
-        _processor3 = [[Processor processorBuilder]
-                       sendRequestWithUrl:@"url3"
-                       withParam:nil
-                       finishDone:^(id result, NSUInteger tag) {
-                           _processor3.param = @{@"k3":@"v3"};
-                           NSLog(@"processor3 end,handle processor3 operation\n\n");
-                       }
-                       failedDone:^(id error) {
-                           NSLog(@"processor3 error\n\n");
-                       }];
-    }
-    return _processor3;
-}
+
 - (Processor *)processFinish{
-    if (!_processFinish) {
-        _processFinish = [[Processor processorBuilder]
-                          sendRequestWithUrl:@"urlfinish"
-                          withParam:nil
-                          finishDone:^(id result, NSUInteger tag) {
-                              _processFinish.param = @{@"kf":@"vf"};
-                              NSLog(@"ProcessorFinish end,handle ProcessorFinish operation\n\n");
-                          }
-                          failedDone:^(id error) {
-                              NSLog(@"ProcessorFinish error\n\n");
-                          }];
-    }
-    return _processFinish;
+    return [[Processor processorBuilder] startTask:^id(Processor *prcessor) {
+        [[ASINetEngine createNetFactory] startRequest:prcessor doneBlock:^(id result, NSUInteger tag) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [prcessor finishedTask:result];
+            });
+        } failedDone:^(id error) {
+            [prcessor faildTask:error];
+        }];
+        return nil;
+    }];
 }
+
+
+//- (Processor *)processor1{
+//    if (!_processor1) {
+//        _processor1 = [[Processor processorBuilder]
+//                       sendRequestWithUrl:@"url1"
+//                       withParam:@{@"fitst1":@"value1"}
+//                       finishDone:^(id result, NSUInteger tag) {
+//                           NSLog(@"processor1 end,handle processor1 operation\n\n");
+//                           _processor1.param = @{@"k1":@"v1"};
+//                       } failedDone:^(id error) {
+//                           NSLog(@"processor1 error\n\n");
+//                       }];
+//
+//    }
+//    return _processor1;
+//}
+//
+//- (Processor *)processor2{
+//    if (!_processor2) {
+//        _processor2 = [[Processor processorBuilder]
+//                       sendRequestWithUrl:@"url2"
+//                       withParam:nil
+//                       finishDone:^(id result, NSUInteger tag) {
+//                           _processor2.param = @{@"k2":@"v2"};
+//                           NSLog(@"processor2 end,handle processor2 operation\n\n");
+//                       }
+//                       failedDone:^(id error) {
+//                           NSLog(@"processor2 error\n\n");
+//                       }];
+//    }
+//    return _processor2;
+//}
+//- (Processor *)processor3{
+//    if (!_processor3) {
+//        _processor3 = [[Processor processorBuilder]
+//                       sendRequestWithUrl:@"url3"
+//                       withParam:nil
+//                       finishDone:^(id result, NSUInteger tag) {
+//                           _processor3.param = @{@"k3":@"v3"};
+//                           NSLog(@"processor3 end,handle processor3 operation\n\n");
+//                       }
+//                       failedDone:^(id error) {
+//                           NSLog(@"processor3 error\n\n");
+//                       }];
+//    }
+//    return _processor3;
+//}
+//- (Processor *)processFinish{
+//    if (!_processFinish) {
+//        _processFinish = [[Processor processorBuilder]
+//                          sendRequestWithUrl:@"urlfinish"
+//                          withParam:nil
+//                          finishDone:^(id result, NSUInteger tag) {
+//                              _processFinish.param = @{@"kf":@"vf"};
+//                              NSLog(@"ProcessorFinish end,handle ProcessorFinish operation\n\n");
+//                          }
+//                          failedDone:^(id error) {
+//                              NSLog(@"ProcessorFinish error\n\n");
+//                          }];
+//    }
+//    return _processFinish;
+//}
 @end

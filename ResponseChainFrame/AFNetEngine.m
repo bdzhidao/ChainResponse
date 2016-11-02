@@ -15,8 +15,8 @@
     //发起请求 [self sendrequest];
     if (doneBlock) {
         NSLog(@"%@ afnet request nettask请求结束",NSStringFromClass([processor class]));
-        NSLog(@"param:%@",processor.param);
-        NSLog(@"url:%@",processor.url);
+//        NSLog(@"param:%@",processor.param);
+//        NSLog(@"url:%@",processor.url);
         doneBlock(@"finish",1);
         if ([processor.delegate respondsToSelector:@selector(handleNextProcessor:)]) {
             [processor.delegate handleNextProcessor:processor];
