@@ -10,7 +10,6 @@
 		2003E3821DC877E200152EB0 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2003E3811DC877E200152EB0 /* Processor.m */; };
 		2003E3881DC8857400152EB0 /* AFNetEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2003E3871DC8857400152EB0 /* AFNetEngine.m */; };
 		2003E38B1DC8872000152EB0 /* ASINetEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2003E38A1DC8872000152EB0 /* ASINetEngine.m */; };
-		2003E38E1DC88B0C00152EB0 /* NetBaseTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2003E38D1DC88B0C00152EB0 /* NetBaseTask.m */; };
 		202594561DC1CD80000CE4E1 /* ProcessorBlockContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 202594551DC1CD80000CE4E1 /* ProcessorBlockContainer.m */; };
 		206B7F6D1DBF0200001F0034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7F6C1DBF0200001F0034 /* main.m */; };
 		206B7F701DBF0200001F0034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7F6F1DBF0200001F0034 /* AppDelegate.m */; };
@@ -19,10 +18,8 @@
 		206B7F781DBF0200001F0034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 206B7F771DBF0200001F0034 /* Assets.xcassets */; };
 		206B7F7B1DBF0200001F0034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 206B7F791DBF0200001F0034 /* LaunchScreen.storyboard */; };
 		206B7F841DBF0248001F0034 /* ChainEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7F831DBF0248001F0034 /* ChainEngine.m */; };
-		206B7F8A1DBF05C1001F0034 /* Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7F891DBF05C1001F0034 /* Facade.m */; };
 		206B7F901DBF061F001F0034 /* DataBaseTask1.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7F8F1DBF061F001F0034 /* DataBaseTask1.m */; };
 		206B7FA31DBF3C8D001F0034 /* ProcessorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7FA21DBF3C8D001F0034 /* ProcessorItem.m */; };
-		206B7FA61DBF3FDD001F0034 /* ResponseCallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7FA51DBF3FDD001F0034 /* ResponseCallBack.m */; };
 		206B7FAC1DBF41EC001F0034 /* NetEngineFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 206B7FAB1DBF41EC001F0034 /* NetEngineFactory.m */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +30,6 @@
 		2003E3871DC8857400152EB0 /* AFNetEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetEngine.m; sourceTree = "<group>"; };
 		2003E3891DC8872000152EB0 /* ASINetEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetEngine.h; sourceTree = "<group>"; };
 		2003E38A1DC8872000152EB0 /* ASINetEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetEngine.m; sourceTree = "<group>"; };
-		2003E38C1DC88B0C00152EB0 /* NetBaseTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetBaseTask.h; sourceTree = "<group>"; };
-		2003E38D1DC88B0C00152EB0 /* NetBaseTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetBaseTask.m; sourceTree = "<group>"; };
 		202594541DC1CD80000CE4E1 /* ProcessorBlockContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorBlockContainer.h; sourceTree = "<group>"; };
 		202594551DC1CD80000CE4E1 /* ProcessorBlockContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessorBlockContainer.m; sourceTree = "<group>"; };
 		206B7F681DBF0200001F0034 /* ResponseChainFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResponseChainFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,15 +44,11 @@
 		206B7F7C1DBF0200001F0034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		206B7F821DBF0248001F0034 /* ChainEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainEngine.h; sourceTree = "<group>"; };
 		206B7F831DBF0248001F0034 /* ChainEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainEngine.m; sourceTree = "<group>"; };
-		206B7F881DBF05C1001F0034 /* Facade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facade.h; sourceTree = "<group>"; };
-		206B7F891DBF05C1001F0034 /* Facade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facade.m; sourceTree = "<group>"; };
 		206B7F8E1DBF061F001F0034 /* DataBaseTask1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseTask1.h; sourceTree = "<group>"; };
 		206B7F8F1DBF061F001F0034 /* DataBaseTask1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseTask1.m; sourceTree = "<group>"; };
 		206B7FA01DBF3A54001F0034 /* ProcessorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorProtocol.h; sourceTree = "<group>"; };
 		206B7FA11DBF3C8D001F0034 /* ProcessorItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorItem.h; sourceTree = "<group>"; };
 		206B7FA21DBF3C8D001F0034 /* ProcessorItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessorItem.m; sourceTree = "<group>"; };
-		206B7FA41DBF3FDD001F0034 /* ResponseCallBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseCallBack.h; sourceTree = "<group>"; };
-		206B7FA51DBF3FDD001F0034 /* ResponseCallBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseCallBack.m; sourceTree = "<group>"; };
 		206B7FAA1DBF41EC001F0034 /* NetEngineFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetEngineFactory.h; sourceTree = "<group>"; };
 		206B7FAB1DBF41EC001F0034 /* NetEngineFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetEngineFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,10 +126,6 @@
 		206B7F921DBF065A001F0034 /* Facade */ = {
 			isa = PBXGroup;
 			children = (
-				206B7F881DBF05C1001F0034 /* Facade.h */,
-				206B7F891DBF05C1001F0034 /* Facade.m */,
-				206B7FA41DBF3FDD001F0034 /* ResponseCallBack.h */,
-				206B7FA51DBF3FDD001F0034 /* ResponseCallBack.m */,
 			);
 			name = Facade;
 			sourceTree = "<group>";
@@ -161,8 +148,6 @@
 				2003E3871DC8857400152EB0 /* AFNetEngine.m */,
 				206B7FAA1DBF41EC001F0034 /* NetEngineFactory.h */,
 				206B7FAB1DBF41EC001F0034 /* NetEngineFactory.m */,
-				2003E38C1DC88B0C00152EB0 /* NetBaseTask.h */,
-				2003E38D1DC88B0C00152EB0 /* NetBaseTask.m */,
 			);
 			name = NetTask;
 			sourceTree = "<group>";
@@ -249,10 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				206B7F841DBF0248001F0034 /* ChainEngine.m in Sources */,
-				206B7F8A1DBF05C1001F0034 /* Facade.m in Sources */,
 				2003E3821DC877E200152EB0 /* Processor.m in Sources */,
 				202594561DC1CD80000CE4E1 /* ProcessorBlockContainer.m in Sources */,
-				206B7FA61DBF3FDD001F0034 /* ResponseCallBack.m in Sources */,
 				206B7F901DBF061F001F0034 /* DataBaseTask1.m in Sources */,
 				206B7FAC1DBF41EC001F0034 /* NetEngineFactory.m in Sources */,
 				206B7F731DBF0200001F0034 /* ViewController.m in Sources */,
@@ -261,7 +244,6 @@
 				206B7F6D1DBF0200001F0034 /* main.m in Sources */,
 				2003E38B1DC8872000152EB0 /* ASINetEngine.m in Sources */,
 				2003E3881DC8857400152EB0 /* AFNetEngine.m in Sources */,
-				2003E38E1DC88B0C00152EB0 /* NetBaseTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

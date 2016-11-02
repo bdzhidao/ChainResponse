@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ResponseCallBack.h"
 #import "ProcessorProtocol.h"
 #import "ProcessorBlockContainer.h"
 @interface Processor : ProcessorBlockContainer<ProcessorProtocol>
