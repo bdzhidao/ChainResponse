@@ -19,7 +19,6 @@
 - (instancetype)sendRequestWithUrl:(NSString *)url withParam:(NSDictionary *)param;
 - (instancetype)finishDone:(void(^)(id result, NSUInteger tag))doneBlock;
 - (instancetype)failedDone:(void(^)(id error))failedBlock;
-//- (void)test:(id)a name:(id)b;
 //- (instancetype)startTask:(id(^)(void))startBlock finishDone:(void(^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock;
 - (instancetype)sendRequestWithUrl:(NSString *)url withParam:(NSDictionary *)param finishDone:(void(^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock;
 + (instancetype)processorBuilder;

@@ -10,8 +10,9 @@
 #import "Processor.h"
 
 @interface NetEngineFactory : NSObject
-//+(NetEngineFactory *)sharedInstance;
-//- (void)startRequest :(NetBaseTask *)task;
+
 - (void)startRequest:(Processor *)processor doneBlock:(void (^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock;
 + (instancetype)createNetFactory;
+- (void)finish;
+- (void)cancel;
 @end

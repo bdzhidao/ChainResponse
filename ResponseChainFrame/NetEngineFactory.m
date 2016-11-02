@@ -45,4 +45,10 @@
 - (void)startRequest:(Processor *)processor doneBlock:(void (^)(id result, NSUInteger tag))doneBlock failedDone:(void(^)(id error))failedBlock{
    
 }
+- (void)finish{
+
+}
+- (void)cancel{
+
+}
 @end
