@@ -37,17 +37,6 @@
 
 - (Processor *)processor1{
     if (!_processor1) {
-//        _processor1 = [[Processor1 processorBuilder] startTask:^id{
-//             NSLog(@"processor1 start");
-//            _processor1.url = @"";
-//             return _processor1;
-//        } finishDone:^(id result, NSUInteger tag) {
-//            // NSLog(@"processor1 end,handle processor1 operation\n\n");
-//             _processor1.param = result;
-//            
-//        } failedDone:^(id error) {
-//             NSLog(@"processor1 error\n\n");
-//        }];
         _processor1 = [[Processor processorBuilder]
                        sendRequestWithUrl:@"url1"
                        withParam:@{@"fitst1":@"value1"}
@@ -64,15 +53,6 @@
 
 - (Processor *)processor2{
     if (!_processor2) {
-//        _processor2 = [[Processor2 processorBuilder] startDone:^id{
-//            NSLog(@"processor2 start");
-//            return _processor2;
-//        } finishDone:^(id result, NSUInteger tag) {
-//            _processor2.param = result;
-//            NSLog(@"processor2 end,handle processor2 operation\n\n");
-//        } failedDone:^(id error) {
-//            NSLog(@"processor2 error\n\n");
-//        }];
         _processor2 = [[Processor processorBuilder]
                        sendRequestWithUrl:@"url2"
                        withParam:nil
@@ -88,15 +68,6 @@
 }
 - (Processor *)processor3{
     if (!_processor3) {
-//        _processor3 = [[Processor3 processorBuilder] startDone:^id{
-//            NSLog(@"processor3 start");
-//            return _processor3;
-//        } finishDone:^(id result, NSUInteger tag) {
-//            _processor3.param = result;
-//            NSLog(@"processor3 end,handle processor3 operation\n\n");
-//        } failedDone:^(id error) {
-//            NSLog(@"processor3 error\n\n");
-//        }];
         _processor3 = [[Processor processorBuilder]
                        sendRequestWithUrl:@"url3"
                        withParam:nil
@@ -112,14 +83,6 @@
 }
 - (Processor *)processFinish{
     if (!_processFinish) {
-//        _processFinish =  [[ProcessorFinish processorBuilder] startDone:^id{
-//            NSLog(@"_processFinish start");
-//            return _processFinish;
-//        } finishDone:^(id result, NSUInteger tag) {
-//            NSLog(@"_processFinish end,handle _processFinish operation\n\n");
-//        } failedDone:^(id error) {
-//            NSLog(@"_processFinish error\n\n");
-//        }];
         _processFinish = [[Processor processorBuilder]
                           sendRequestWithUrl:@"urlfinish"
                           withParam:nil
